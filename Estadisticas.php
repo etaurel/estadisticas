@@ -23,6 +23,8 @@ SELECT
     CONCAT(ROUND(AVG(CASE WHEN score - par = 2 THEN 1 ELSE 0 END) * 100), '%') AS doble_bogeys_pct,
     CONCAT(ROUND(AVG(CASE WHEN score - par >= 3 THEN 1 ELSE 0 END) * 100), '%') AS triple_bogeys_pct,
     SUM(score - golpes_hcp) AS total_score_neto,
+    SUM(score) AS total_score,
+    SUM(golpes_hcp) AS hcp_torneo,
     CONCAT('https://www.scoring.com.ar/app/images/clubes/', clubes.imagen) AS club_image,
     CONCAT('https://www.scoring.com.ar/app/images/clubes/logos/', clubes.logo) AS club_logo,
     jugadores.nombre AS player_name,
